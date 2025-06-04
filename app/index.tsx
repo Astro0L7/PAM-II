@@ -1,12 +1,27 @@
-  import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { useState } from "react";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
   export default function index() {
     
+    type Player = "X" | "O" | null
+    type Board = Player[];
+
+    const [board, setBoard] = useState<Board>(Array(9).fill(null));
+    const [currentPlayer, setCurrentPlayer] = useState<Player>("X");
+    const [winner, setWinner] = useState<Player | "draw">(null);
+    
+    const handlePress = (index: number) => {
+
+      const newBoard = [...board];
+      newBoard[index] = currentPlayer;
+      setBoard(newBoard);
+    }
+
     // Arrow Function: revisar em minhas anotações do curso Udemy.
-    const cell = () => {
+    const cell = (index: number) => {
       return(
-        <TouchableOpacity style={style.square}>
-          <Text style={style.symbol}>X</Text>
+        <TouchableOpacity style={style.square} onPress={() => (handlePress(index))}>
+          <Text style={style.symbol}>{board[index]}</Text>
         </TouchableOpacity> 
       );
     };
@@ -18,19 +33,19 @@
 
         <View style={style.board}>
           <View style={style.row}>
-            {cell()}
-            {cell()}
-            {cell()}
+            {cell(0)}
+            {cell(1)}
+            {cell(2)}
           </View>
           <View style={style.row}>
-            {cell()}
-            {cell()}
-            {cell()}
+            {cell(3)}
+            {cell(4)}
+            {cell(5)}
           </View>
           <View style={style.row}>
-            {cell()}
-            {cell()}
-            {cell()}
+            {cell(6)}
+            {cell(7)}
+            {cell(8)}
           </View>
         </View>
       </View>
@@ -68,7 +83,7 @@
       width: 80,
       height: 80,
       borderWidth: 2,
-      borderColor: "#333333",
+      borderColor:"rgb(51, 51, 51)",
       alignItems: "center",
       justifyContent: "center",
       backgroundColor: "FFFFFF",
@@ -78,4 +93,16 @@
       fontSize: 26,
       fontWeight: "bold",
     },
+    resetButton: {
+      padding: 10,
+      backgroundColor:"rgb(87, 180, 186)",
+      borderRadius: 5,
+      borderWidth: 2,
+      borderColor:"rgb(0, 80, 76)",
+    },
+    resetText: {
+        color:"rgb(253, 251, 238)",
+        fontSize: 16,
+        fontWeight: "bold",
+    }
   })
