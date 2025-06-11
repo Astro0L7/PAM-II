@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Alert, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
   export default function index() {
     
@@ -10,12 +10,52 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
     const [currentPlayer, setCurrentPlayer] = useState<Player>("X");
     const [winner, setWinner] = useState<Player | "draw">(null);
     
+    const checkWinner = (squares: Board) => {
+      const lines = [
+        // Horizontal
+        [0, 1, 2], 
+        [3, 4, 5],
+        [6, 7, 8],
+        // Vertical 
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        // Diagonal
+        [0, 4, 8],
+        [2, 4, 7]
+      ]
+
+      for (const [a, b, c] of lines) {
+        if  (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+
+          return squares[a];
+        }
+        return null;
+      }
+    }
+
+    const checkDraw = (squares: Board) => {
+      const check = (squares: Any) => squares !== null; 
+      return squares.every(check) && !checkWinner(squares);
+    }
+
     const handlePress = (index: number) => {
 
       const newBoard = [...board];
       newBoard[index] = currentPlayer;
       setBoard(newBoard);
-    }
+
+      setCurrentPlayer(currentPlayer === "X" ? "O" : "X")
+
+      const gameWinner = checkWinner(newBoard);
+
+      if (gameWinner) {
+        setWinner(gameWinner);
+        alert(`Jogador ${gameWinner} venceu!`)
+      } else {
+        setCurrentPlayer(currentPlayer === "X" ? "O" : "X")
+      }
+    };
 
     // Arrow Function: revisar em minhas anotações do curso Udemy.
     const cell = (index: number) => {
@@ -49,6 +89,10 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
           </View>
         </View>
       </View>
+
+      <TouchableOpacity onPress={ResetGame}>
+        <Text>Reiniciar Jogo</Text>
+      </TouchableOpacity>
     )
   }
 
@@ -94,7 +138,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
       fontWeight: "bold",
     },
     resetButton: {
-      padding: 10,
+      padding: 10, 
       backgroundColor:"rgb(87, 180, 186)",
       borderRadius: 5,
       borderWidth: 2,
