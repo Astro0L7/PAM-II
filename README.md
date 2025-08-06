@@ -7,7 +7,7 @@ Repositório privado com as atividades e projetos da disciplina de Programação
 1. Clone o repositório (precisa de permissões):
 
    ```bash
-   git clone https://github.com/seuusuario/pam-ii.git
+   git clone https://github.com/Astro0L7/PAM-II.git
    ```
 
 2. Entre na pasta do repositório:
