@@ -1,0 +1,40 @@
+### Passo a Passo para Criar um Projeto Expo
+
+1. **Criar o projeto Expo**
+   No terminal, use o comando abaixo para criar um novo projeto com o Expo:
+
+   ```bash
+   npx create-expo-app@latest
+   ```
+
+   Isso vai baixar a ferramenta mais recente para criar o app.
+
+2. **Escolher o nome do app**
+   O terminal vai pedir o nome do seu aplicativo. Neste caso, o nome escolhido foi "To-Do":
+
+   ```
+   What is your app named? ... To-Do
+   ```
+
+3. **Instalar dependências**
+   O Expo vai começar a baixar os arquivos necessários e instalar as dependências do projeto:
+
+   ```bash
+   npm install
+   ```
+
+   Durante a instalação, podem aparecer alguns avisos sobre pacotes desatualizados, mas isso não impede o processo.
+
+4. **Entrar na pasta do projeto**
+   Após a instalação, entre na pasta do seu novo projeto com:
+
+   ```bash
+   cd To-Do
+   ```
+
+5. **Abrir no Visual Studio Code**
+   Agora, basta abrir o projeto no Visual Studio Code com:
+
+   ```bash
+   code .
+   ```
