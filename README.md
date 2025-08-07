@@ -13,7 +13,7 @@ Repositório privado com as atividades e projetos da disciplina de Programação
 2. Entre na pasta do repositório:
 
    ```bash
-   cd pam-ii
+   cd PAM-II
    ```
 
 3. Liste os branches disponíveis:
