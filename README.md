@@ -1,50 +1,61 @@
-# Welcome to your Expo app 👋
+# 📝 To-Do App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge\&logo=react) ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge\&logo=typescript) ![Expo](https://img.shields.io/badge/Expo-000000?style=for-the-badge\&logo=expo)
 
-## Get started
+Um aplicativo de lista de tarefas simples feito com **React Native**. Permite adicionar tarefas, marcar como concluídas e organizar a lista de forma prática.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 🛠 Tecnologias usadas
 
-2. Start the app
+* React Native
+* TypeScript
+* Expo
+* React Hooks (`useState`, `useEffect`)
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## ⚡ Funcionalidades
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+* Adicionar tarefas
+* Visualizar tarefas adicionadas
+* Marcar tarefas como concluídas
+* Layout responsivo e simples
+* Componentes reutilizáveis (`Input`, `Button`, `Task`, `List`)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 🚀 Como executar
 
-When you're ready, run:
+1. Clone o repositório:
 
 ```bash
-npm run reset-project
+git clone https://github.com/Astro0L7/To-Do-App.git
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Entre na pasta do projeto:
 
-## Learn more
+```bash
+cd To-Do-App
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+3. Instale as dependências:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npm install
+# ou
+yarn install
+```
 
-## Join the community
+4. Execute o projeto com Expo:
 
-Join our community of developers creating universal apps.
+```bash
+npm run start
+# ou
+npx expo start
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+5. Abra no seu dispositivo ou emulador:
+
+* **No celular**: use o app **Expo Go** e escaneie o QR code
+* **No computador**: use um **emulador Android/iOS**
