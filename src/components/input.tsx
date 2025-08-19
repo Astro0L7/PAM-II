@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { TextInput, StyleSheet } from "react-native";
 
 export default function Input(props) {
-    const [text, setText] = useState("");
+    const [task, setTask] = useState("");
     return (
         <TextInput 
-            style = {[styles[props.size], styles[props.border]]}
-            value = {text}
-            onChangeText = {setText}
+            style = {styles[props.size]}
+            value = {task}
+            onChangeText = {setTask}
             placeholder = "Digite uma tarefa"
         />
     )
@@ -15,25 +15,21 @@ export default function Input(props) {
 
 const styles = StyleSheet.create({
     large: {
-        width: '50%',
-        height: 30,
+        width: '100%',
+        borderBottomWidth: 1,
+        borderColor: 'rgba(105, 105, 105, 1)',
+        paddingHorizontal: 3,
     },
     medium: {
-        width: '35%',
-        height: 30,
+        width: '65%',
+        borderBottomWidth: 1,
+        borderColor: 'rgba(105, 105, 105, 1)',
+        paddingHorizontal: 3,
     },
     small: {
-        width: '20%',
-        height: 30,
-    },
-
-    thin: {
-        borderWidth: 1,
+        width: '40%',
+        borderBottomWidth: 1,
+        borderColor: 'rgba(105, 105, 105, 1)',
         paddingHorizontal: 3,
     },
-
-    thick: {
-        borderWidth: 2,
-        paddingHorizontal: 3,
-    }
 })

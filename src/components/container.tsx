@@ -2,30 +2,19 @@ import { View, StyleSheet } from "react-native";
 
 export default function Container(props) {
     return (
-        <View style={styles[props.align]}> {props.children} </View>
+        <View style={styles.container}> {props.children} </View>
     )   
 }
 
 const styles = StyleSheet.create({
-    center: {
+    container: {
+        width: '100%',
+        height: '100%',
         alignItems: 'center',
-        justifyContent: 'center',
-        paddingTop: 20,
-        paddingHorizontal: 10, 
-    },
-
-    left: {
-        alignItems: 'flex-start',
-        justifyContent: 'flex-start',
-        paddingTop: 20,
-        paddingHorizontal: 10,
-
-    },
-
-    right: {
-        alignItems: 'flex-end',
-        justifyContent: 'flex-end',
-        paddingTop: 20,
-        paddingHorizontal: 10, 
+        paddingVertical: 30,
+        paddingHorizontal: 20,
+        backgroundColor: 'rgb(240, 248, 255)', // cor oficial
+        // backgroundColor: 'rgba(161, 206, 245, 1)', // cor para visualizar limites do layout
+        
     },
 })
